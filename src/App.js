@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './components/common/GlobalStyle';
 import MainPage from './pages/MainPage';
 import SampleStylePage from './pages/SampleStylePage';
+import SamplePage from './pages/SamplePage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       </Helmet>
       <Route component={MainPage} path={'/'} exact />
       <Route component={SampleStylePage} path={'/style'} exact />
+      <Route component={SamplePage} path={'/redux'} exact />
     </ThemeProvider>
   );
 }
