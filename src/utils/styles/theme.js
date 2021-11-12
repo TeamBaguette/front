@@ -32,6 +32,7 @@ export const lightMode = {
     deep: palette.black[0],
     mute: palette.gray[4],
     light: palette.gray[8],
+    bg_main: palette.blue[6], // ex.반복 요일 bg
   },
   // 기본 아이콘 컬러
   icon: {
@@ -72,8 +73,8 @@ export const lightMode = {
     },
     // 비활성화 버튼 컬러 디자인 나오면 변경
     disable: {
-      bg: palette.gray[6],
-      text: palette.white[0],
+      bg: palette.gray[10],
+      text: palette.gray[11],
     },
     kakao: palette.yellow[3],
     google: palette.white[0],
