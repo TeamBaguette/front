@@ -57,7 +57,7 @@ const StyledButton = styled.button`
   outline: none;
   cursor: pointer;
   background: ${(props) =>
-    props.light ? props.theme.main.cyan : props.theme.main.gray};
+    props.light ? props.theme.button.main.bg : props.theme.button.disable.bg};
   margin: 1rem;
 `;
 
