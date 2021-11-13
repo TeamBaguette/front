@@ -19,15 +19,13 @@ const store = createStore(
 // console.log(store.getState());
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <HelmetProvider>
-          <App />
-        </HelmetProvider>
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );
 

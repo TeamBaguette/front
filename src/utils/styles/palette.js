@@ -16,7 +16,7 @@ const palette = {
   ],
   white: ['#FFFFFF'],
   yellow: ['#FFF5CD', '#FFF4CE', '#FFD836', '#FEDE00'],
-  brown: ['#FFF8EF', '#FFE5D1', '#987063'],
+  brown: ['#FFF8EF', '#FFE5D1', '#987063', '#3B1E1E'],
   pink: ['#FFE9E9', '#FFE5F0', '#F85F61'],
   blue: [
     '#F2F7FF',

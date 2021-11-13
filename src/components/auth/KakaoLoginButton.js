@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
+import Button from '../common/Button';
 
 const KakaoLoginButton = ({ history }) => {
   const { Kakao } = window;
   const loginType = 'kakao';
-  const loginWithKakao = () => {
+
+  const loginWithKakao = useCallback(() => {
+    console.log('loginKakao 실행');
     // 카카오 인스턴스 없을 경우
-    if (!Kakao) return false;
+    if (!Kakao.Auth) return false;
 
     Kakao.Auth.login({
       // Auth.login으로 카카오 로그인
@@ -32,7 +35,7 @@ const KakaoLoginButton = ({ history }) => {
         console.error(err);
       },
     });
-  };
+  });
 
   const onSuccess = (privateKey, email, nickname) => {
     console.log(privateKey, email, nickname);
@@ -50,7 +53,17 @@ const KakaoLoginButton = ({ history }) => {
     });
   };
 
-  return <button onClick={loginWithKakao}>카카오 로그인</button>;
+  return (
+    <Button
+      onClick={loginWithKakao}
+      radius="8"
+      bgColor={(props) => props.theme.button.kakao}
+      color={(props) => props.theme.text.kakao}
+      logo="icons/kakao_logo.svg"
+    >
+      카카오톡으로 로그인
+    </Button>
+  );
 };
 
-export default withRouter(KakaoLoginButton);
+export default withRouter(React.memo(KakaoLoginButton));

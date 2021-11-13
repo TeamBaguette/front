@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
+import Button from '../common/Button';
 
 const GoogleLoginButton = ({ history }) => {
   const loginType = 'google';
@@ -37,6 +38,18 @@ const GoogleLoginButton = ({ history }) => {
       responseType={'id_token'}
       onSuccess={onSuccess}
       onFailure={onFailure}
+      render={(renderProps) => (
+        <Button
+          onClick={renderProps.onClick}
+          disabled={renderProps.disabled}
+          radius="8"
+          bgColor={(props) => props.theme.button.google}
+          color={(props) => props.theme.text.deep}
+          logo="icons/google_logo.svg"
+        >
+          구글로 로그인
+        </Button>
+      )}
     />
   );
 };
