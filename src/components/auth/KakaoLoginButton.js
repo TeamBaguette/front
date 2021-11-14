@@ -59,7 +59,7 @@ const KakaoLoginButton = ({ history }) => {
       radius="8"
       bgColor={(props) => props.theme.button.kakao}
       color={(props) => props.theme.text.kakao}
-      logo="icons/kakao_logo.svg"
+      logo="logos/kakao_logo.svg"
     >
       카카오톡으로 로그인
     </Button>

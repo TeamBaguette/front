@@ -45,7 +45,7 @@ const GoogleLoginButton = ({ history }) => {
           radius="8"
           bgColor={(props) => props.theme.button.google}
           color={(props) => props.theme.text.deep}
-          logo="icons/google_logo.svg"
+          logo="logos/google_logo.svg"
         >
           구글로 로그인
         </Button>

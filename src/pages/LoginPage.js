@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import GoogleLoginButton from '../components/auth/GoogleLoginButton';
 import KakaoLoginButton from '../components/auth/KakaoLoginButton';
 
 const LoginPage = () => {
+  const BUCKET = process.env.REACT_APP_S3_URL;
   const LoginPageCenterWrap = styled.div`
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@ const LoginPage = () => {
   `;
 
   const SloganImg = styled.img.attrs({
-    src: `./assets/icons/slogan_main_white.svg`,
+    src: `${BUCKET}/logos/slogan_main_white.svg`,
   })`
     position: absolute;
     top: 8.63rem;
@@ -24,7 +25,7 @@ const LoginPage = () => {
   `;
 
   const BigBaguetteImg = styled.img.attrs({
-    src: `./assets/icons/baguette_big.svg`,
+    src: `${BUCKET}/logos/baguette_big.svg`,
   })`
     position: absolute;
     left: -0.5rem;

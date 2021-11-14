@@ -23,9 +23,11 @@ const Button = ({ children, onClick, logo, radius, bgColor, color }) => {
     ${logo &&
     css`
       &:before {
-        content: url('./assets/${logo}');
+        content: '';
+        width: 1.9rem;
+        height: 1.6rem;
+        background: url('${process.env.REACT_APP_S3_URL}/${logo}') no-repeat;
         position: absolute;
-        top: center;
         left: 3.2rem;
       }
     `}
