@@ -2,16 +2,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import BottomMenuBar from '../components/common/BottomMenuBar';
 
-const MainPage = () => {
+const SettingPage = () => {
   return (
     <div className="page_wrap p_19 bm">
       <Helmet>
-        <title>Baguette - Main</title>
+        <title>Baguette - Setting</title>
       </Helmet>
-      <div>바게트 홈</div>
+      <div>바게트 설정</div>
       <BottomMenuBar />
     </div>
   );
 };
 
-export default MainPage;
+export default SettingPage;

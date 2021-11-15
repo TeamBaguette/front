@@ -35,7 +35,7 @@ const LoginPage = () => {
   `;
 
   return (
-    <LoginPageCenterWrap className="page_wrap_28">
+    <LoginPageCenterWrap className="page_wrap p_28">
       <Helmet>
         <title>바게트 - 로그인</title>
       </Helmet>

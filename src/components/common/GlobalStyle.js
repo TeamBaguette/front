@@ -55,10 +55,25 @@ const GlobalStyle = createGlobalStyle`
   }
   
   /* 임시 */
-  .page_wrap_28{
+  .page_wrap{
     height: 100%;
     min-height: 100vh;
-    padding: 2.8rem;
+
+    // 좌우 여백
+    &.p_19{
+      padding-left: 1.9rem;
+      padding-right: 1.9rem;
+    }
+
+    &.p_28{
+      padding-left: 2.8rem;
+      padding-right: 2.8rem;
+    }
+
+    // 하단 메뉴바가 있을경우 하단 여백 
+    &.bm{
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+    }
   }
 `;
 

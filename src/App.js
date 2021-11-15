@@ -9,6 +9,8 @@ import SampleStylePage from './pages/SampleStylePage';
 import SamplePage from './pages/SamplePage';
 import LoginPage from './pages/LoginPage';
 import AuthCallBackPage from './pages/AuthCallBackPage';
+import ReportPage from './pages/ReportPage';
+import SettingPage from './pages/SettingPage';
 
 function App() {
   useEffect(() => {
@@ -29,6 +31,8 @@ function App() {
       </Helmet>
       {/* main */}
       <Route component={MainPage} path={'/'} exact />
+      <Route component={ReportPage} path={'/report'} />
+      <Route component={SettingPage} path={'/setting'} exact />
       {/* auth (login 관련) */}
       <Route component={LoginPage} path={'/login'} />
       <Route component={AuthCallBackPage} path={'/auth/:type'} />
