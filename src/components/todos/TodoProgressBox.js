@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ProgressLineBar from '../common/ProgressLineBar';
 
-const TodoProgressBox = ({ date, completeCount, totalCount }) => {
+const TodoProgressBox = ({ theme, date, completeCount, totalCount }) => {
   const description = {
     0: '재료 계량중',
     30: '반죽중...',
@@ -32,38 +32,6 @@ const TodoProgressBox = ({ date, completeCount, totalCount }) => {
     setDesc(getDescription(percent));
   }, [percent]);
 
-  const StyledProgressBox = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 1.5rem 0;
-  `;
-
-  const StyledWrap = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    color: ${(props) => props.theme.text.deep};
-    font-size: 1.2rem;
-    font-family: 'Noto Sans KR';
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    p,
-    .complete,
-    .percent {
-      color: ${(props) => props.theme.text.light};
-    }
-    span,
-    div {
-      font-weight: 500;
-    }
-  `;
-
   const getDescription = (percent) => {
     let desc = '';
 
@@ -86,7 +54,7 @@ const TodoProgressBox = ({ date, completeCount, totalCount }) => {
 
   return (
     <StyledProgressBox>
-      <StyledWrap>
+      <StyledWrap theme={theme}>
         <h2>{dayName}의 To-Do</h2>
         <div>
           <span className="complete">{completeCount}</span>
@@ -101,5 +69,37 @@ const TodoProgressBox = ({ date, completeCount, totalCount }) => {
     </StyledProgressBox>
   );
 };
+
+const StyledProgressBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem 0;
+`;
+
+const StyledWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: ${(props) => props.theme.text.deep};
+  font-size: 1.2rem;
+  font-family: 'Noto Sans KR';
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  p,
+  .complete,
+  .percent {
+    color: ${(props) => props.theme.text.light};
+  }
+  span,
+  div {
+    font-weight: 500;
+  }
+`;
 
 export default TodoProgressBox;

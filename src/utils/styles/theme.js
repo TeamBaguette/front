@@ -32,8 +32,11 @@ export const lightMode = {
     deep: palette.black[0],
     mute: palette.gray[4],
     light: palette.gray[8],
+    pure: palette.white[0], // ex.반복 요일 text
     bg_main: palette.blue[6], // ex.반복 요일 bg
     kakao: palette.brown[3], // kakao 폰트 컬러
+    holiday: palette.red[0],
+    prev_holiday: palette.red[1],
   },
   // 기본 아이콘 컬러
   icon: {

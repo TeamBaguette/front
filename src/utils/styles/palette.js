@@ -18,15 +18,8 @@ const palette = {
   yellow: ['#FFF5CD', '#FFF4CE', '#FFD836', '#FEDE00'],
   brown: ['#FFF8EF', '#FFE5D1', '#987063', '#3B1E1E'],
   pink: ['#FFE9E9', '#FFE5F0', '#F85F61'],
-  blue: [
-    '#F2F7FF',
-    '#EAF0FF',
-    '#83A8FF',
-    '#BADAFF',
-    '#4FA0FF',
-    '#4A90E2',
-    '#1B5DEC',
-  ],
+  blue: ['#F2F7FF', '#EAF0FF', '#83A8FF', '#BADAFF', '#4FA0FF', '#4A90E2', '#1B5DEC'],
+  red: ['#DA615C', '#E69E9C'],
 };
 
 export default palette;
