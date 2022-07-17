@@ -4,8 +4,16 @@
     "es6": true,
     "node": true
   },
-  "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb", "plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb/hook",
+    "airbnb-typescript",
+    "prettier"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -15,10 +23,11 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json" //타입스크립트 파싱이 가능하도록 하기 위해 parserOptions의 project의 값으로 타입스크립트 설정 파일을 가리키도록 함
   },
-  "plugins": ["react", "react-hooks", "prettier"],
+  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 0,
