@@ -1,4 +1,107 @@
 /** url */
-$img-url: 'https://'; // S3 url
+$img-url: 'https://baguette-s3.s3.ap-northeast-2.amazonaws.com/images/'; // S3
 
 /** colors */
+$main-primary: #1B5DEC;
+$main-base:#4A90E2;
+$white:#FFFFFF;
+$black: #000000;
+
+/** palette */
+$palette: (
+  // page background
+  background:(
+    default: $white,
+    point: $main-primary,
+  ),
+
+  // charactor
+  butter: (
+    background: #FFF4CE,
+    icon: #FFF5CD,
+    border: #FFD836,
+  ),
+  nutella: (
+    background: #FFE5D1,
+    icon: #FFF8EF,
+    border: #987063,
+  ),
+  strawberry: (
+    background: #FFE6F0,
+    icon: #FFE9E9,
+    border: #F85F61,
+  ),
+  water: (
+    background: #EAF0FF,
+    icon: #F2F7FF,
+    border: #83A8FF,
+  ),
+
+  // font
+  text: (
+    black: $black,
+    pure: $white,
+    light: #666666,
+    mute: #999999,
+    holiday: #DA615C,
+    holiday-light: #E69E9C,
+  ),
+
+  // icon
+  icon: (
+    deep: #000000,
+    mute: #333333,
+    light: #C8C8C8,
+    border: #EDEDED,
+  ),
+
+  // inputs
+  input: (
+    line: #CFCFCF,
+    focus: $main-primary,
+  ),
+  check:(
+    incomplete-bg:#DADDDF,
+    incomplete-icon:#B7B8B9,
+    complete-bg: $main-base,
+    complete-icon:$white
+  ),
+  switch:(
+    disable-bg:#DFE3E8,
+    disable-ball:#B7C1CC,
+    enable-bg:#BADAFF,
+    enable-ball:#4FA0FF,
+  ),
+
+  // button
+  button:(
+    main-bg:$main-primary,
+    main-text:$white,
+    disable-bg:#E6E6E6,
+    disable-text:#B3B3B3,
+  ),
+
+  // etc
+  progress:(
+    background:#EFEFEF,
+    bar:$main-base,
+  ),
+  kakao:(
+    main: #FEDE00,
+    text: #3B1E1E,
+  ),
+);
+
+@function get-color($component,$detail){
+  @if map-has-key($palette,$component){
+      $component: map-get($palette,$component);
+          @if map-has-key($component,$detail){
+              $detail: map-get($component,$detail);
+              @return $detail;
+          }
+          @warn "unknown tone `#{$detail}` in color";
+          @return null;        
+  }
+  @warn "unknown color `#{$component}` in palette";
+  @return null;
+}

@@ -1,0 +1,7 @@
+@import './common/variables';
+
+.button {
+  width: 100px;
+  background-color: get-color(button, main-bg);
+  color: get-color(button, main-text);
+}

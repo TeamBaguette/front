@@ -1,9 +1,11 @@
 import type { NextPage } from 'next';
+import style from '../styles/style.module.scss';
 
 const Style: NextPage = () => {
   return (
     <>
-      <div>STYLE SAMPLE PAGE</div>
+      <h1>STYLE SAMPLE PAGE</h1>
+      <button className={style.button}>TEST</button>
     </>
   );
 };
