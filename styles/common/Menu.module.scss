@@ -1,3 +1,7 @@
+@import '/styles/variables';
+
+$menu: todo, report, mypage;
+
 .menu {
   position: absolute;
   left: 0;
@@ -9,4 +13,11 @@
   height: calc(5rem + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / length($menu));
 }
