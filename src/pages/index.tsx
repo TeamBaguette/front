@@ -5,7 +5,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div>홈</div>
-      <Link href="/style">style sample page</Link>
+      <Link href="/example/button">button style sample page</Link>
     </>
   );
 };
