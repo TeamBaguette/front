@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:dev": "env-cmd -f ./env.development next start",
+    "start:production": "env-cmd -f ./env.production next start"
   },
   "dependencies": {
     "@types/jest": "^28.1.5",
