@@ -1,10 +1,14 @@
+@import '/styles/variables';
+
 // ========== Application Common Styles ==========
 
 html,
 body {
   padding: 0;
   margin: 0;
+  color: get-color(text, black);
   font-family: 'Noto Sans KR', 'Helvetica', sans-serif;
+  font-size: calc(200vw / 75);
 }
 
 a {

@@ -15,7 +15,7 @@ $black: #000000;
 /** palette */
 $palette: (
   // page background
-  background:(
+  bg:(
     default: $white,
     point: $main-primary,
   ),
@@ -72,10 +72,10 @@ $palette: (
     complete-icon:$white
   ),
   switch:(
-    disable-bg:#DFE3E8,
-    disable-ball:#B7C1CC,
-    enable-bg:#BADAFF,
-    enable-ball:#4FA0FF,
+    off-bg:#DFE3E8,
+    off-ball:#B7C1CC,
+    on-bg:#BADAFF,
+    on-ball:#4FA0FF,
   ),
 
   // button

@@ -12,17 +12,19 @@ const MenuIcon: React.FC<Menu> = ({ href, iconName }) => {
   const router = useRouter();
   return (
     <Link href={href}>
-      <div className={menuStyle.link}>
-        <Image
-          width={22}
-          height={22}
-          src={
-            process.env.NEXT_PUBLIC_IMG_URL +
-            `icons/menu_${iconName}${
-              router.pathname === href ? '_active' : ''
-            }.svg`
-          }
-        />
+      <div className={menuStyle.menu__link}>
+        <div className={menuStyle.menu__image}>
+          <Image
+            width="100%"
+            height="100%"
+            src={
+              process.env.NEXT_PUBLIC_IMG_URL +
+              `icons/menu_${iconName}${
+                router.pathname === href ? '_active' : ''
+              }.svg`
+            }
+          />
+        </div>
       </div>
     </Link>
   );
