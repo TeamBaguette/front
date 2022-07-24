@@ -4,12 +4,17 @@ import Switch from 'src/components/common/Switch';
 import style from 'styles/common/example.module.scss';
 
 const PageSwitch: NextPage = () => {
-  /** Switch 컴포넌트는 스위치를 사용하는 컴포넌트에서 넘겨주는 props의 check값에 따라 움직이고
-      Switch 컴포넌트 자체에서 값을 변경 하지 않음 */
   const [switchFlag, setSwitchFlag] = useState<boolean>(false);
 
   const onChangeConsole = useCallback((element: string) => {
     console.log(`PageSwitch onChange : ${element}`);
+  }, []);
+
+  const onChangeSwitch = useCallback((checked: boolean) => {
+    // Switch 컴포넌트를 사용하는 곳에서 플래그를 저장하는 state를 변경하고
+    setSwitchFlag(checked);
+    //그 다음 실행할 코드를 넣으면 된다.
+    console.log('변경되었다! 스위치');
   }, []);
 
   return (
@@ -34,7 +39,7 @@ const PageSwitch: NextPage = () => {
       <Switch
         id="ex"
         checked={switchFlag}
-        onChange={() => setSwitchFlag(!switchFlag)}
+        onChange={checked => onChangeSwitch(checked)} // Switch 컴포넌트에서 onChange에 return으로 checked:boolean을 넘겨줌
       />
     </div>
   );

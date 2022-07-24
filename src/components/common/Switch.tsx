@@ -1,14 +1,22 @@
 import classNames from 'classnames';
+import { useCallback } from 'react';
 import switchStyle from 'styles/common/Switch.module.scss';
 
 type SwitchProps = {
   id: string;
   checked: boolean;
   label?: string;
-  onChange: () => void;
+  onChange: (checked: boolean) => void;
 };
 
 const Switch: React.FC<SwitchProps> = ({ id, checked, label, onChange }) => {
+  const handleOnChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange(e.currentTarget.checked);
+    },
+    [],
+  );
+
   return (
     <div className={switchStyle.switch}>
       {label && (
@@ -29,7 +37,7 @@ const Switch: React.FC<SwitchProps> = ({ id, checked, label, onChange }) => {
             role="switch"
             aria-checked={checked}
             checked={checked}
-            onChange={onChange}
+            onChange={e => handleOnChange(e)}
           />
         </div>
       </div>
