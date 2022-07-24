@@ -6,9 +6,10 @@ const PageExamples: NextPage = () => {
   return (
     <div className={style.example}>
       <h1>샘플 페이지 링크 리스트</h1>
-      <Link href="/example/button">[buttons]</Link>
-      <br />
-      <Link href="/example/switch">[switch]</Link>
+      <Link href="/example/button">-buttons</Link>
+      <Link href="/example/switch">-switch</Link>
+      <Link href="/example/radio">-radio (charaters)</Link>
+      <Link href="/example/icon">-icon</Link>
     </div>
   );
 };
