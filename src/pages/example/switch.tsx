@@ -20,27 +20,35 @@ const PageSwitch: NextPage = () => {
   return (
     <div className={style.example}>
       <h1>Switch Sample</h1>
-      <h2>on</h2>
-      <Switch id="on" checked={true} onChange={() => onChangeConsole('on')} />
-      <h2>off</h2>
-      <Switch
-        id="off"
-        checked={false}
-        onChange={() => onChangeConsole('off')}
-      />
-      <h2>label</h2>
-      <Switch
-        id="label"
-        checked={false}
-        label="반복"
-        onChange={() => onChangeConsole('label')}
-      />
-      <h2>동작 예시</h2>
-      <Switch
-        id="ex"
-        checked={switchFlag}
-        onChange={checked => onChangeSwitch(checked)} // Switch 컴포넌트에서 onChange에 return으로 checked:boolean을 넘겨줌
-      />
+      <div>
+        <h3>- on</h3>
+        <Switch id="on" checked={true} onChange={() => onChangeConsole('on')} />
+      </div>
+      <div>
+        <h3>-off</h3>
+        <Switch
+          id="off"
+          checked={false}
+          onChange={() => onChangeConsole('off')}
+        />
+      </div>
+      <div>
+        <h3>- label</h3>
+        <Switch
+          id="label"
+          checked={false}
+          label="반복"
+          onChange={() => onChangeConsole('label')}
+        />
+      </div>
+      <div>
+        <h3>- 동작 예시</h3>
+        <Switch
+          id="ex"
+          checked={switchFlag}
+          onChange={checked => onChangeSwitch(checked)} // Switch 컴포넌트에서 onChange에 return으로 checked:boolean을 넘겨줌
+        />
+      </div>
     </div>
   );
 };

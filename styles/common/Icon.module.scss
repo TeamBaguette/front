@@ -1,5 +1,21 @@
-.character {
-  &--list {
-    width: 2.1rem;
+.icon {
+  display: inline-flex;
+
+  &.character {
+    &--list {
+      width: 2.1rem;
+    }
+  }
+
+  &.baguette {
+    width: 3.4rem;
+  }
+
+  &.small {
+    width: 1.5rem;
+  }
+
+  & + & {
+    margin-left: 1.3rem;
   }
 }

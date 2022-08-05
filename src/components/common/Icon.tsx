@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import IconStyle from 'styles/common/Icon.module.scss';
 
@@ -9,7 +10,12 @@ type Icon = {
 
 const Icon: React.FC<Icon> = ({ folderName, iconName, className }) => {
   return (
-    <div className={className ? IconStyle[className] : ''}>
+    <div
+      className={classNames(
+        IconStyle.icon,
+        className ? IconStyle[className] : '',
+      )}
+    >
       <Image
         width="100%"
         height="100%"
