@@ -22,8 +22,8 @@ const Button: React.FC<Button> = props => {
       className={classNames(
         ButtonStyle.button, // 기본 button 공통 스타일
         ButtonStyle[`button--${buttonType}`], // button 타입별 스타일
-        className ? ButtonStyle[className] : '',
-        disabled ? ButtonStyle.disabled : '',
+        className && ButtonStyle[className],
+        disabled && ButtonStyle.disabled,
       )}
       aria-disabled={disabled}
       onClick={onClick}

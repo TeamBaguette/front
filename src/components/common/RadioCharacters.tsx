@@ -22,7 +22,7 @@ const RadioCharacter: React.FC<RadioCharacter> = ({
     <div
       className={classNames(
         RadioStyle.radios__character,
-        selected ? RadioStyle[name] : '',
+        selected && RadioStyle[name],
       )}
     >
       <Icon folderName="characters" iconName={name} />
