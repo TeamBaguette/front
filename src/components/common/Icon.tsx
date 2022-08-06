@@ -11,10 +11,7 @@ type Icon = {
 const Icon: React.FC<Icon> = ({ folderName, iconName, className }) => {
   return (
     <div
-      className={classNames(
-        IconStyle.icon,
-        className ? IconStyle[className] : '',
-      )}
+      className={classNames(IconStyle.icon, className && IconStyle[className])}
     >
       <Image
         width="100%"
